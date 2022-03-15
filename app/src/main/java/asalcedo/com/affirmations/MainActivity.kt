@@ -15,7 +15,9 @@ class MainActivity : AppCompatActivity() {
 
         val myDataSet = Datasource().loadAffirmations()
 
-        binding.recyclerView.adapter = ItemAdapter(this, myDataSet)
-        binding.recyclerView.setHasFixedSize(true)
+        binding.recyclerView.apply {
+            adapter = ItemAdapter(this@MainActivity, myDataSet)
+            setHasFixedSize(true)
+        }
     }
 }
