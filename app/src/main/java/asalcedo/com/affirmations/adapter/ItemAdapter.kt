@@ -19,6 +19,7 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
     RecyclerView.Adapter<ItemAdapter.AffirmationViewHolder>() {
     class AffirmationViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val binding = ListItemBinding.bind(view)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AffirmationViewHolder {
@@ -30,6 +31,7 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
         val item = dataset[position]
         with(holder){
             binding.itemTitle.text = context.resources.getString(item.stringResourceId)
+            binding.itemImage.setImageResource(item.imageResourceId)
         }
     }
 
